@@ -1,0 +1,38 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-8">
+      <h3>Posts</h3>
+    </div>
+    <div class="col-4">
+      <h3>Events</h3>
+    </div>
+  </div>
+</div>
+<% @posts.each do |post| %>
+  <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <td>Title</td>
+          <td><%= post.title %></td>
+          <td>Like Button</td>
+          <td><%= post.likes %></td><br>
+          <!-- <td>Description(NOTSHOW)</td>
+          <td><= post.description %></td><br> -->
+          <!-- <td>Comments(NOT SHOW)</td>
+          <td><= post.comment %></td><br> -->
+          <!-- <td>Category(DONT SHOW)</td>
+          <td><= post.category %></td><br> -->
+          <!-- <td>Anime(NOT SHOW)</td>
+          <td><= post.anime %></td><br>
+          <td>CHARAC(NOT show)</td>
+          <td><= post.character %></td><br> -->
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'New Post', new_post_path %></td>
+          <hr>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
